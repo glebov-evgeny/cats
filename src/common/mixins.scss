@@ -1,0 +1,42 @@
+//Функции для работы с компонентнами
+@use 'sass:math';
+
+@function rem($px) {
+  @return math.div($px, 16) + rem;
+}
+
+@mixin _1920 {
+  @media screen and (min-width: 1920px) {
+    @content;
+  }
+}
+
+@mixin _1600 {
+  @media screen and (min-width: 1600px) {
+    @content;
+  }
+}
+
+@mixin _1140 {
+  @media screen and (min-width: 1140px) {
+    @content;
+  }
+}
+
+@mixin _992 {
+  @media screen and (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin _768 {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin _576 {
+  @media screen and (min-width: 576px) {
+    @content;
+  }
+}

@@ -1,0 +1,116 @@
+html{
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 135%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+a:active,
+a:focus {
+  outline: none;
+  box-shadow: inherit;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+body,
+ul,
+ol,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+button,
+textarea,
+select,
+table {
+  padding: 0;
+  margin: 0;
+  font-weight: normal;
+}
+
+button{
+  border: none;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--color-main);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-second);
+  border-radius: rem(5);
+}
+
+::-webkit-scrollbar {
+  width: rem(5);
+}
+
+#root{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+.main{
+  box-sizing: border-box;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  width: 100%;
+  background: var(--color-main);
+  color: var(--color-second);
+  padding-top: rem(50);
+}
+.container{
+  z-index: 1;
+  position: relative;
+  padding: 0 var(--a-padding-x5);
+  margin: 0 auto;
+  max-width: rem(1320);
+}
+.wrapper{
+  display: flex;
+}

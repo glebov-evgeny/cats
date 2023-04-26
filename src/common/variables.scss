@@ -1,0 +1,57 @@
+:root {
+  // colors
+  --color-main: #fff;
+  --color-second: #272727;
+  --color-black: #272727;
+  --color-white: #fff;
+  --color-grey: #eee;
+  --color-pink: #FFE2E2;
+  --color-pink-light:#feefef;
+  --color-pink-soft:#ffdeff;
+  --color-pink-soft-rgb: 255,222,255;
+  --color-yellow-light: #fffdea;
+  --color-blue: #2196F3;
+  .dark-themes {
+    --color-main: #272727;
+    --color-second: #fff;
+    --color-black: #272727;
+    --color-grey: #eee;
+    --color-white: #fff;
+    --color-pink: #959595;
+    --color-pink-light:#676464;
+    --color-pink-soft:#504d50;
+    --color-pink-soft-rgb:80,77,80;
+    --color-yellow-light:#3a3a3a;
+    --color-blue: #8ca9ff;
+  }
+
+  // paddings
+  --padding-step: 4px;
+  --a-padding-x1: var(--padding-step);
+  --a-padding-x2: calc(var(--padding-step) * 2);
+  --a-padding-x3: calc(var(--padding-step) * 3);
+  --a-padding-x4: calc(var(--padding-step) * 4);
+  --a-padding-x5: calc(var(--padding-step) * 5);
+  --a-padding-x6: calc(var(--padding-step) * 6);
+  --a-padding-x7: calc(var(--padding-step) * 7);
+  --a-padding-x8: calc(var(--padding-step) * 8);
+  --a-padding-x9: calc(var(--padding-step) * 9);
+  --a-padding-x10: calc(var(--padding-step) * 10);
+  --a-padding-x11: calc(var(--padding-step) * 11);
+  --a-padding-x12: calc(var(--padding-step) * 12);
+  --a-padding-x13: calc(var(--padding-step) * 13);
+  --a-padding-x14: calc(var(--padding-step) * 14);
+  --a-padding-x15: calc(var(--padding-step) * 15);
+  --a-padding-x16: calc(var(--padding-step) * 16);
+  --a-padding-x17: calc(var(--padding-step) * 17);
+  --a-padding-x18: calc(var(--padding-step) * 18);
+  --a-padding-x20: calc(var(--padding-step) * 20);
+
+  // border-radius
+  --border-radius-x1: 4px;
+  --border-radius-x2: 8px;
+  --border-radius-x3: 12px;
+  --border-radius-x8: 32px;
+
+}
+
