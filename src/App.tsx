@@ -1,18 +1,17 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootLayout from "./pages/RootLayout";
-import Main from "./pages/Main";
-import Favorite from "./components/favorite/Favorite";
-import Error from "./pages/Error";
+import MainPage from "./pages/Main";
+import FavoritePage from "./pages/Favorite";
+import ErrorPage from "./pages/Error";
 
 const router = createBrowserRouter([
   { path: '/',
     element: <RootLayout />,
-    errorElement: <Error />,
-    
+    errorElement: <ErrorPage />,      
     children: [
-      { path:'/', element: <Main /> },
-      { path:'/favorite', element: <Favorite /> },
+      { path:'/', element: <MainPage /> },
+      { path:'/favorite', element: <FavoritePage/>},
     ]
   },
 ], {

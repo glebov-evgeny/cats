@@ -2,7 +2,9 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   items: [],
-  totalQuantity: 0,
+  itemsQuantity: 0,
+  favoriteItems: [],
+  favoriteItemsQuantity: 0,
 }
 
 const catsSlice = createSlice({
@@ -11,18 +13,39 @@ const catsSlice = createSlice({
   reducers: {
     addItemToCart(state, action) {
       const newItem = action.payload;
-      const existingItem = state.items.find((item) => item.id === newItem.id);
-      state.totalQuantity++;
+      state.items.push({
+        id: newItem.id,
+        url: newItem.url,
+      })
+      state.itemsQuantity++;
+
+      // console.log(newItem)
+      // const existingItem = state.items.find((item) => item.id === newItem.id);
+      // if (!existingItem) {
+      //   state.items.push({
+      //     id: newItem.id,
+      //     url: newItem.url,
+      //   })
+      //   state.itemsQuantity++;
+      // } else {
+      //   console.log('e;t tcnm')
+      // }
+    },
+    addItemToCartFavorite(state, action) {
+      const newItem = action.payload;
+      const existingItem = state.favoriteItems.find((item) => item.id === newItem.id);
       if (!existingItem) {
-        state.items.push({
+        state.favoriteItems.push({
           id: newItem.id,
-          height: newItem.height,
-          width: newItem.width,
-          url: newItem.url,
-      });
-      } else {
-        existingItem.quantity++;
-      }
+          url: newItem.image.url,
+        })
+        state.favoriteItemsQuantity++;
+      }    
+    },
+    removeItemFromFavorite(state, action) {
+      const newItem = action.payload;
+      state.favoriteItems = state.favoriteItems.filter((item) => item.id !== newItem)
+      state.favoriteItemsQuantity--;
     }
   }
 })

@@ -16,13 +16,12 @@
     &-link{
       display: inline-block;
       color: var(--color-main);
-      padding: var(--a-padding-x3) var(--a-padding-x4);
-      @include _768{
-        padding: var(--a-padding-x6);
-      }
+      padding: var(--a-padding-x3) var(--a-padding-x5);
+      font-weight: 500;
       &.active{
         color: var(--color-main);
-        background: #1E88E5;
+        background: var(--color-blue-hover);
+
       }
       &:hover{
         color: var(--color-main);

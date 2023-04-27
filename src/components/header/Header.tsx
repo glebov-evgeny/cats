@@ -7,8 +7,8 @@ function Header() {
     <header className="header">
       <div className="header__container container">
         <nav className="header__nav">
-          <NavLink to='/' className="header__nav-link">Все котики</NavLink>
-          <NavLink to='/favorite' className="header__nav-link">Любимые котики</NavLink>
+          <NavLink to='/' className="header__nav-link">All</NavLink>
+          <NavLink to='/favorite' className="header__nav-link">Faforite</NavLink>
         </nav>
       </div>
     </header>

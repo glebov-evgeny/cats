@@ -1,7 +1,7 @@
 import React from 'react';
 import './Error.scss';
 
-function Error() {
+function ErrorPage() {
   
 
   return (
@@ -11,4 +11,4 @@ function Error() {
   );
 }
 
-export default Error;
+export default ErrorPage;

@@ -1,18 +1,19 @@
-import './Intro.scss';
-import Card from '../_ui/card/Card';
+import React from 'react';
+import { useSelector } from 'react-redux';
 
-function Intro(props: { allCats: any }) {
-  type itemCard = {
-    id: string,
-    height: number,
-    width: number,
-    url: string,
-  }
+import Card from '../_ui/card/Card';
+import './Intro.scss';
+
+
+function Intro(props:any) {
+  const allCats = useSelector((state:any) => state.cats.items);
+
+
   return (
     <section className="intro">
       <div className="container">
         <div className="intro__box">
-          {props.allCats.map((item: itemCard)=> <Card key={item.id} item={item}/>)}
+          {allCats.map((item:any)=> <Card key={item.id} item={item} handlerFunction={props.addFavorite}/>)}
         </div>
       </div>
     </section>

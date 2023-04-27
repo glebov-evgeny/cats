@@ -1,16 +1,14 @@
 @import '../../common/mixins';
 
 .intro{
-  padding: var(--a-padding-x10) 0;
+  padding: var(--a-padding-x8) 0 var(--a-padding-x5);
   &__box{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: rem(24);
     @include _576{
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: rem(30);
     }
     @include _768{
       grid-template-columns: repeat(3, 1fr);

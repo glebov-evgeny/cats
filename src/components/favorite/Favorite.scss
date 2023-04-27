@@ -1,5 +1,22 @@
 @import '../../common/mixins';
 
 .favorite{
- padding: rem(100) 0;
+  padding: var(--a-padding-x10) 0;
+  &__box{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    @include _576{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: rem(30);
+    }
+    @include _768{
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include _1140{
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
 }
