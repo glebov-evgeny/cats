@@ -1,7 +1,7 @@
 @import '../../common/mixins';
 
 .header{
-  background: var(--color-blue);
+  background: var(--color-main);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.24);
   position: fixed;
   top: 0;
@@ -11,20 +11,25 @@
   z-index: 100;
   &__container{
     padding: 0;
+    @include _768{
+      padding: 0 var(--a-padding-x5);
+    }
   }
   &__nav{
     &-link{
       display: inline-block;
-      color: var(--color-main);
+      color: var(--color-second);
       padding: var(--a-padding-x3) var(--a-padding-x5);
       font-weight: 500;
       &.active{
         color: var(--color-main);
-        background: var(--color-blue-hover);
-
+        background: var(--color-second);
+        &:hover{
+          color: var(--color-main);
+        }
       }
       &:hover{
-        color: var(--color-main);
+        color: var(--color-second);
       }
     }
   }
