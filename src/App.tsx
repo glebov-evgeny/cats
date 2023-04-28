@@ -30,7 +30,7 @@ const App = () => {
   useEffect(()=>{
     dispatch(catsActions.setLoading())
     try {
-      getAllCats(4).then((response) => dispatch(catsActions.setData(response)))
+      getAllCats(8).then((response) => dispatch(catsActions.setData(response)))
       getAllFavorites().then((response) =>{dispatch(catsActions.setDataFavorites(response))})
     } catch (error) {
       console.error('Ошибка: ' + error)

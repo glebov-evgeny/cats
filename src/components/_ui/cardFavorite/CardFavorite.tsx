@@ -34,6 +34,3 @@ const removeFavoriteItem = (item:any) => {
 }
 
 export default CardFavorite;
-
-
-
