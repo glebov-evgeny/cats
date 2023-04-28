@@ -13,23 +13,22 @@ const catsSlice = createSlice({
   reducers: {
     addItemToCart(state, action) {
       const newItem = action.payload;
-      state.items.push({
-        id: newItem.id,
-        url: newItem.url,
-      })
-      state.itemsQuantity++;
+      const existingItem = state.items.find((item) => item.id === newItem.id);
+      if (!existingItem) {
+        state.items.push({
+          id: newItem.id,
+          url: newItem.url,
+          isFavorite: false
+        })
+        state.itemsQuantity++;
+      }
+    },
+    addHeart(state, action) {
+      const newItem = action.payload;
+      const existingItem = state.items.find((item) => item.id === newItem.id);
+      
+      existingItem.isFavorite = true;
 
-      // console.log(newItem)
-      // const existingItem = state.items.find((item) => item.id === newItem.id);
-      // if (!existingItem) {
-      //   state.items.push({
-      //     id: newItem.id,
-      //     url: newItem.url,
-      //   })
-      //   state.itemsQuantity++;
-      // } else {
-      //   console.log('e;t tcnm')
-      // }
     },
     addItemToCartFavorite(state, action) {
       const newItem = action.payload;
@@ -40,6 +39,7 @@ const catsSlice = createSlice({
           url: newItem.image.url,
         })
         state.favoriteItemsQuantity++;
+
       }    
     },
     removeItemFromFavorite(state, action) {

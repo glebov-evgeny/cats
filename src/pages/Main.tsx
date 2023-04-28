@@ -18,11 +18,6 @@ const MainPage = () => {
     url: string,
   }
 
-  type itemCardFavorite = {
-    id: number,
-    url: string,
-  }
-
   const getAllCats = async () => {
     await axios.get(`${process.env.REACT_APP_API_URL}images/search?limit=8`, {
       headers: { 
@@ -46,22 +41,8 @@ const MainPage = () => {
         'content-type':"application/json",
         'x-api-key': process.env.REACT_APP_API_KEY 
       },
-    }).then(()=>getFavoriteCats())  
-  }
-
-  const getFavoriteCats = async () => {
-    await axios.get(`${process.env.REACT_APP_API_URL}favourites`, {
-      headers: { 
-        'content-type':"application/json",
-        'x-api-key':  process.env.REACT_APP_API_KEY 
-      },
-    }).then((response) => {
-      setFavoriteCatsToStore(response.data)
-    });
-  }
-
-  const setFavoriteCatsToStore = (cats:any) => {
-    cats.forEach((item:itemCardFavorite)=>{dispatch(catsActions.addItemToCartFavorite(item))})
+    })  
+    dispatch(catsActions.addHeart(item))
   }
 
   useEffect(() => {

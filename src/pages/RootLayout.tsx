@@ -9,7 +9,7 @@ function RootLayout() {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 1400);
+    }, 2400);
   }, []);
   
   return (

@@ -18,4 +18,17 @@
   @include _768{
     height: rem(270);
   }
+  &__decoration{
+    position: absolute;
+    bottom: rem(18);
+    right: 10%;
+    opacity: 0;
+    transition: .3s;
+  }
+  &:hover{
+    .card__decoration{
+      bottom: rem(20);
+      opacity: 1;
+    }
+  }
 }
