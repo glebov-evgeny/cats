@@ -1,7 +1,5 @@
-# Portfolio
+# Cats Instagram
 ## Setup
-
-Make sure to install the dependencies:
 
 ```bash
 # yarn
@@ -14,7 +12,6 @@ npm install
 
 ## Development Server
 
-Start the development server on http://localhost:3000/react-cv/
 
 ```bash
 # yarn
