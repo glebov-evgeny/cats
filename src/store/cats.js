@@ -2,51 +2,43 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   items: [],
+  itemsFavorites: [],
+  loading: false,
   itemsQuantity: 0,
-  favoriteItems: [],
-  favoriteItemsQuantity: 0,
+  itemsQuantityFavorites: 0,
 }
 
 const catsSlice = createSlice({
   name: 'cats',
   initialState: initialState,
   reducers: {
-    addItemToCart(state, action) {
-      const newItem = action.payload;
-      const existingItem = state.items.find((item) => item.id === newItem.id);
-      if (!existingItem) {
-        state.items.push({
-          id: newItem.id,
-          url: newItem.url,
-          isFavorite: false
-        })
-        state.itemsQuantity++;
-      }
+    setData(state, action) {
+      console.log(action.payload)
+      state.items = action.payload;
+      state.loading = false;
+      state.itemsQuantity = action.payload.length;
+    },
+    setDataFavorites(state, action) {
+      // console.log(action.payload)
+      state.itemsFavorites = action.payload;
+      state.loading = false;
+      state.itemsQuantityFavorites = action.payload.length;
+    },
+    removeItemFavorite(state, action) {
+      state.itemsFavorites = state.itemsFavorites.filter((item) => item.id !== action.payload)
+      state.itemsQuantityFavorites--;
+    },
+    setLoading(state) {
+      state.loading = true;
     },
     addHeart(state, action) {
-      const newItem = action.payload;
-      const existingItem = state.items.find((item) => item.id === newItem.id);
-      
-      existingItem.isFavorite = true;
-
+      const currentItem = state.items.find((item) => item.id === action.payload);
+      currentItem.isFavorite = true;
     },
-    addItemToCartFavorite(state, action) {
-      const newItem = action.payload;
-      const existingItem = state.favoriteItems.find((item) => item.id === newItem.id);
-      if (!existingItem) {
-        state.favoriteItems.push({
-          id: newItem.id,
-          url: newItem.image.url,
-        })
-        state.favoriteItemsQuantity++;
-
-      }    
+    removeHeart(state, action) {
+      const currentItem = state.items.find((item) => item.id === action.payload);
+      currentItem.isFavorite = false;
     },
-    removeItemFromFavorite(state, action) {
-      const newItem = action.payload;
-      state.favoriteItems = state.favoriteItems.filter((item) => item.id !== newItem)
-      state.favoriteItemsQuantity--;
-    }
   }
 })
 

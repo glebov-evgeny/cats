@@ -20,13 +20,14 @@
   }
   &__decoration{
     position: absolute;
-    bottom: rem(20);
+    bottom: rem(18);
     right: 10%;
     opacity: 0;
     transition: .3s;
   }
   &:hover{
     .card__decoration{
+      bottom: rem(20);
       opacity: 1;
     }
   }

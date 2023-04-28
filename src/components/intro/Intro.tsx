@@ -13,7 +13,7 @@ function Intro(props:any) {
     <section className="intro">
       <div className="container">
         <div className="intro__box">
-          {allCats.map((item:any)=> <Card key={item.id} item={item} handlerFunction={props.addFavorite}/>)}
+          {allCats.map((item:any)=> <Card key={item.id} item={item} />)}
         </div>
       </div>
     </section>
