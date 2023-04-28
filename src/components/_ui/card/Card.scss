@@ -24,6 +24,9 @@
     right: 10%;
     opacity: 0;
     transition: .3s;
+    &._active{
+      opacity: 1;
+    }
   }
   &:hover{
     .card__decoration{

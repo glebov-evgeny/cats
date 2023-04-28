@@ -1,6 +1,6 @@
 @import '../../../common/mixins';
 
-.card {
+.card-f {
   position: relative;
   display: flex;
   width: 100%;
@@ -20,14 +20,16 @@
   }
   &__decoration{
     position: absolute;
-    bottom: rem(18);
+    bottom: rem(20);
     right: 10%;
     opacity: 0;
     transition: .3s;
+    &._active{
+      opacity: 1;
+    }
   }
   &:hover{
     .card__decoration{
-      bottom: rem(20);
       opacity: 1;
     }
   }

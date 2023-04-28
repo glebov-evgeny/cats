@@ -13,13 +13,11 @@ const catsSlice = createSlice({
   initialState: initialState,
   reducers: {
     setData(state, action) {
-      console.log(action.payload)
       state.items = action.payload;
       state.loading = false;
       state.itemsQuantity = action.payload.length;
     },
     setDataFavorites(state, action) {
-      // console.log(action.payload)
       state.itemsFavorites = action.payload;
       state.loading = false;
       state.itemsQuantityFavorites = action.payload.length;
